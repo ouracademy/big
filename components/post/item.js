@@ -19,6 +19,15 @@ export default ({ post }) => (
         <CardTitle
             avatar={<Avatar src={post.author.avatar} role="presentation" />}
             title={post.author.name}
+            subtitle={toddmmyyyy(post.publishedAt)}
         />
     </Card>
 )
+
+// we call use momentjs or FormatJS of React...this second will be oyr next option
+const toddmmyyyy = (stringDate) => {
+  const pad = s => s < 10 ? `0${s}` : s
+  const date = new Date(stringDate)
+  
+  return [pad(date.getDate()), pad(date.getMonth()+1), date.getFullYear()].join('/');
+}

@@ -2,19 +2,19 @@ import Page from '../layouts/main'
 import PostList from '../components/post/list'
 
 import Button from 'react-md/lib/Buttons'
-// https://api.graph.cool/simple/v1/cj2i3es3zjoo80122iz4zzjph
+import withData from '../lib/withData'
 
 
-export default () => (
+export default withData(() => (
   <Page>
     <Page.Header />
     <Slider />
     <PostList />
   </Page>
-)
+))
 
 const Slider = () => (
-  <section title="slogan" className="cover">
+  <section className="cover">
     <div className="slogan">
       <h1>El mundo espera por ti</h1>
       <h3>Aprende con nosotros y crea tu futuro</h3>
