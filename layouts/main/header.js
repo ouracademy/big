@@ -4,8 +4,8 @@ import Button from 'react-md/lib/Buttons'
 import Head from 'next/head'
 import Router from 'next/router'
 
-const unScrolled = { logo: '/static/big-alternate.png', style: { backgroundColor: 'transparent', boxShadow: "none" } }
-const scrolled = { logo: '/static/big.png', style: { backgroundColor: 'white' } }
+const unScrolled = { logo: '/static/big-alternate.png', themed: false }
+const scrolled = { logo: '/static/big.png', themed: true }
 
 export default class Header extends Component {
     constructor() {
@@ -35,9 +35,9 @@ export default class Header extends Component {
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                    <style>{`
+                    <style jsx global>{`
                         body { 
-                        margin: 0px;
+                            margin: 0px;
                         }
 
                         section {
@@ -47,11 +47,21 @@ export default class Header extends Component {
                             justify-content: space-around;
                             padding: 4rem;
                         }
+
+                        .logo {
+                            height: 70%;
+                            margin-top: 1%
+                        }
+
+                        .app-bar {
+                            box-shadow: none;
+                        }
+
                     `}</style>
                 </Head>
-                <Toolbar fixed
-                    style={this.state.style}
-                    title={<a onClick={() => Router.push('/')}><img src={this.state.logo} style={{ height: "70%", marginTop: "1%" }} /></a>}
+                <Toolbar fixed themed={this.state.themed}
+                    className="app-bar"
+                    title={<a onClick={() => Router.push('/')}><img className="logo" src={this.state.logo} /></a>}
                     actions={[<Button flat primary iconBefore={false} label="Bienvenido">insert_emoticon</Button>]}
                 />
             </div>
