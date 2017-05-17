@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Toolbar from 'react-md/lib/Toolbars'
 import Button from 'react-md/lib/Buttons'
 import Head from 'next/head'
+import Router from 'next/router'
 
 const unScrolled = { logo: '/static/big-alternate.png', style: { backgroundColor: 'transparent', boxShadow: "none" } }
 const scrolled = { logo: '/static/big.png', style: { backgroundColor: 'white' } }
@@ -35,22 +36,22 @@ export default class Header extends Component {
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                     <style>{`
-                body { 
-                margin: 0px;
-                }
+                        body { 
+                        margin: 0px;
+                        }
 
-                section {
-                    display: flex;
-                    flex-flow: row wrap;
-                    align-items:center;
-                    justify-content: space-around;
-                    padding: 4rem;
-                }
-            `}</style>
+                        section {
+                            display: flex;
+                            flex-flow: row wrap;
+                            align-items:center;
+                            justify-content: space-around;
+                            padding: 4rem;
+                        }
+                    `}</style>
                 </Head>
                 <Toolbar fixed
                     style={this.state.style}
-                    title={<img src={this.state.logo} style={{ height: "70%", marginTop: "0.5%" }} />}
+                    title={<a onClick={() => Router.push('/')}><img src={this.state.logo} style={{ height: "70%", marginTop: "1%" }} /></a>}
                     actions={[<Button flat primary iconBefore={false} label="Bienvenido">insert_emoticon</Button>]}
                 />
             </div>
