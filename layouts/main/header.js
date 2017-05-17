@@ -35,7 +35,11 @@ export default class Header extends Component {
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                    <style jsx global>{`
+                    <style global jsx>{`
+                        html, .md-toolbar--themed {
+                            background-color: white;
+                        }
+
                         body { 
                             margin: 0px;
                         }
@@ -52,15 +56,10 @@ export default class Header extends Component {
                             height: 70%;
                             margin-top: 1%
                         }
-
-                        .app-bar {
-                            box-shadow: none;
-                        }
-
                     `}</style>
                 </Head>
                 <Toolbar fixed themed={this.state.themed}
-                    className="app-bar"
+                    style={{boxShadow: "none"}}
                     title={<a onClick={() => Router.push('/')}><img className="logo" src={this.state.logo} /></a>}
                     actions={[<Button flat primary iconBefore={false} label="Bienvenido">insert_emoticon</Button>]}
                 />
