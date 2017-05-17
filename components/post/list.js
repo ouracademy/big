@@ -1,5 +1,5 @@
 import { gql, graphql } from 'react-apollo'
-import PostItem from './item'
+import PostItem from './card'
 
 const PostList = ({ data: { allPosts, loading } }) => (
     <section>
