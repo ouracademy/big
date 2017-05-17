@@ -1,9 +1,9 @@
 import Card from 'react-md/lib/Cards/Card'
 import CardTitle from 'react-md/lib/Cards/CardTitle'
 import Media, { MediaOverlay } from 'react-md/lib/Media'
-import Avatar from 'react-md/lib/Avatars'
 import Button from 'react-md/lib/Buttons'
 import Link from 'next/link'
+import Meta from './meta'
 
 export default ({ post }) => (
     <Card style={{ width: 500 }} className="md-block-centered">
@@ -19,11 +19,7 @@ export default ({ post }) => (
                 </a>
             </Link>
         </Media>
-        <CardTitle
-            avatar={<Avatar src={post.author.avatar} role="presentation" />}
-            title={post.author.name}
-            subtitle={toddmmyyyy(post.publishedAt)}
-        />
+        <Meta author={post.author} publishedAt={post.publishedAt} />
     </Card>
 )
 
