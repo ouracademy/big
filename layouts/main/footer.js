@@ -9,7 +9,7 @@ export default () => (
                 <p>BIG es una empresa peruana que fomenta la cultura emprendedora en el país a través de talleres, seminarios,
                     cursos y conferencias.</p>
                 <Link href="/nosotros">
-                    <Button style={{padding: 0}} flat primary iconBefore={false} label="Conócenos">keyboard_arrow_right</Button>
+                    <a><Button style={{padding: 0}} flat primary iconBefore={false} label="Conócenos">keyboard_arrow_right</Button></a>
                 </Link>
             </div>
             <div className="md-cell md-cell--6">
@@ -35,12 +35,6 @@ export default () => (
         <div className="md-grid footer-bottom">
             <div className="md-cell md-cell--6">
                 <p>Copyright © {new Date().getFullYear()} Business Ideas Group (BIG).</p>
-            </div>
-            <div className="md-cell md-cell--6">
-                <ul className="list-inline">
-                    <li><Link href="nosotros"><Button style={{padding: 0}} flat primary label="Nosotros" /></Link></li>
-                    <li><Link href="contactenos"><Button style={{padding: 0}} flat primary label="Contáctenos" /></Link></li>
-                </ul>
             </div>
         </div>
         <style jsx>{`
