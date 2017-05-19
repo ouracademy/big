@@ -7,7 +7,7 @@ import withData from '../lib/withData'
 
 export default withData(() => (
   <Page>
-    <Page.Header />
+    <Page.Header title="BIG"/>
     <Slider />
     <PostList />
   </Page>

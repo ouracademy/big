@@ -5,16 +5,18 @@ import Page from '../layouts/main'
 import PostArticle from '../components/post/article'
 
 const Post = ({ data }) => {
-  if (data.loading) {
-    return <div>Loading</div>
-  }
+  const page = data.loading ? {
+    title: 'Cargando Post',
+    content: <div>Loading</div>
+  } :{
+      title: data.Post.title,
+      content: <PostArticle post={data.Post} />
+    }
 
   return (
     <Page>
-      <Page.Header />
-      <div>
-        <PostArticle post={data.Post} />
-      </div>
+      <Page.Header title={page.title} />
+      {page.content}
     </Page>
   )
 }
@@ -23,6 +25,7 @@ const postQuery = gql`
     query post($slug: String!) {
         Post(slug: $slug) {
             slug
+            title
             content
             author {
               name

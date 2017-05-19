@@ -30,12 +30,13 @@ export default class Header extends Component {
         return (
             <div>
                 <Head>
+                    <title>{this.props.title}</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link rel='stylesheet' href='/static/react-md.light_blue-yellow.min.css' />
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
                     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                    <style global jsx>{`
+                    <style jsx global>{`
                         html, .md-toolbar--themed {
                             background-color: white;
                         }
