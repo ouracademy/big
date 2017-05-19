@@ -1,48 +1,43 @@
 import Page from '../layouts/main'
 import PostList from '../components/post/list'
-
-import Button from 'react-md/lib/Buttons'
+import Slider from '../components/home/slider'
 import withData from '../lib/withData'
+import 'rxjs'
+import { Observable } from 'rxjs/Observable';
 
+const isScrollInSlider = (element) => element.scrollTop <= 400
 
-export default withData(() => (
-  <Page>
-    <Page.Header title="BIG"/>
-    <Slider />
-    <PostList />
-  </Page>
-))
+class HomePage extends React.Component {
+  constructor() {
+    super()
+    this.state = { isServer: true }
+  }
 
-const Slider = () => (
-  <section className="cover">
-    <div className="slogan">
-      <h1>El mundo espera por ti</h1>
-      <h3>Aprende con nosotros y crea tu futuro</h3>
-      <Button raised primary label="Empieza ahora!" iconBefore={false}>arrow_forward</Button>
-    </div>
-    <style jsx>{`
-        .cover {
-            width:100%;
-            height:500px;
-            background-image: url('/static/big-cover.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
+  componentDidMount() {
+    this.setState((prevState, props) => ({ isServer: false, alternate: isScrollInSlider(document.body) }))
+
+    this.scrollSub = Observable.fromEvent(window, 'scroll')
+      .map(event => isScrollInSlider(event.target.body))
+      .distinctUntilChanged()
+      .subscribe(isScrollInSlider =>
+        this.setState((prevState, props) => Object.assign(prevState, { alternate: isScrollInSlider })))
+  }
+
+  componentWillUnmount() {
+    this.scrollSub.unsubscribe()
+  }
+
+  render() {
+    return (
+      <Page title="BIG">
+        {
+          this.state.isServer ? <div>Loading</div> : <Page.Header alternate={this.state.alternate} />
         }
+        <Slider />
+        <PostList />
+      </Page>
+    )
+  }
+}
 
-        .slogan {
-            text-align: center;
-        }
-
-        .slogan h1 {
-          font-size: 4rem;
-          color: white;
-        }
-
-        .slogan h3 {
-          font-size: 2rem;
-          color: #d2d2d2;
-        }
-        `}</style>
-  </section>
-)
+export default withData(HomePage)

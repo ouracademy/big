@@ -8,14 +8,14 @@ const Post = ({ data }) => {
   const page = data.loading ? {
     title: 'Cargando Post',
     content: <div>Loading</div>
-  } :{
+  } : {
       title: data.Post.title,
       content: <PostArticle post={data.Post} />
     }
 
   return (
-    <Page>
-      <Page.Header title={page.title} />
+    <Page title={page.title}>
+      <Page.Header />
       {page.content}
     </Page>
   )
