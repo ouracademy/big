@@ -6,8 +6,11 @@ import Footer from './footer'
 const Page = ({ title, children }) => (
     <div>
         <Head>
-            <title>{title}</title>
+            <title>{title} | BIG</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            
+            <link rel="icon" href="/static/favicon.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon" />
+
             <link rel='stylesheet' href='/static/react-md.light_blue-yellow.min.css' />
             <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
             <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons' />

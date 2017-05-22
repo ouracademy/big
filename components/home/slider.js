@@ -5,7 +5,6 @@ export default () => (
         <div className="slogan">
             <h1>El mundo espera por ti</h1>
             <h3>Aprende con nosotros y crea tu futuro</h3>
-            <Button raised primary label="Empieza ahora!" iconBefore={false}>arrow_forward</Button>
         </div>
         <style jsx>{`
         .cover {
@@ -22,13 +21,15 @@ export default () => (
         }
 
         .slogan h1 {
-          font-size: 4rem;
+          font-size: 4.5rem;
           color: white;
+          padding-bottom: 10px;
         }
 
         .slogan h3 {
           font-size: 2rem;
           color: #d2d2d2;
+          padding-bottom: 5px;
         }
         `}</style>
     </section>

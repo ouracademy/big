@@ -6,11 +6,10 @@ export default () => (
         <div className="md-grid footer-top">
             <div className="md-cell md-cell--6">
                 <h4 className="md-title">¿Quiénes somos?</h4>
-                <p>BIG es una empresa peruana que fomenta la cultura emprendedora en el país a través de talleres, seminarios,
-                    cursos y conferencias.</p>
-                <Link href="/nosotros">
+                <p>BIG es una comunidad que se dedica a brindar educación de calidad a personas que desean crear su futuro.</p>
+                {/*<Link href="/nosotros">
                     <a><Button style={{padding: 0}} flat primary iconBefore={false} label="Conócenos">keyboard_arrow_right</Button></a>
-                </Link>
+                </Link>*/}
             </div>
             <div className="md-cell md-cell--6">
                 <h4 className="md-title">Mantente en contácto</h4>

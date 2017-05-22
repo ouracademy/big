@@ -29,7 +29,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <Page title="BIG">
+      <Page title="Aprende y crea tu futuro">
         {
           this.state.isServer ? <div>Loading</div> : <Page.Header alternate={this.state.alternate} />
         }
