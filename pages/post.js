@@ -17,6 +17,11 @@ const Post = ({ data }) => {
     <Page title={page.title}>
       <Page.Header />
       {page.content}
+      <style jsx global>{`
+        body {
+          padding-top: 64px;
+        }
+      `}</style>
     </Page>
   )
 }

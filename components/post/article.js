@@ -61,9 +61,14 @@ export default ({ post }) => (
                 background-color: #ececec;
             }
 
+            a {
+                color: inherit;
+            }
+
             figure {
                 margin-left: 0;
                 margin-right: 0;
+                text-align: center;
             }
 
             figure img {
