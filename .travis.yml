@@ -1,10 +1,3 @@
 language: node_js
 node_js:
 - '7'
-before_install:
-- openssl aes-256-cbc -K $encrypted_8b7a4d64df5a_key -iv $encrypted_8b7a4d64df5a_iv
-  -in bigperu-a0c167e6f081.json.enc -out bigperu-a0c167e6f081.json -d
-deploy:
-  provider: gae
-  keyfile: "bigperu-a0c167e6f081.json.enc"
-  project: "bigperu-168501"
