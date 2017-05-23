@@ -1,6 +1,2 @@
 runtime: nodejs
 env: flex
-deploy:
-  provider: gae
-  keyfile: "bigperu-a0c167e6f081.json.enc"
-  project: "bigperu-168501"
