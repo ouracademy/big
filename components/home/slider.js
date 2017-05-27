@@ -13,7 +13,7 @@ export default () => (
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-attachment: fixed;
-                background-position-x: -650px;
+                background-position-x: -150px;
             }
 
             .slogan {
