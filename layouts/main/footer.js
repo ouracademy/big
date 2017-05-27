@@ -45,13 +45,10 @@ export default () => (
                 background: rgb(35, 35, 35);
             }
 
-            .md-grid {
-                padding: 0.5rem 10rem;
-            }
-
-            p, li {
+            .app-footer p, .app-footer li {
                 font-size: 1.2rem;
                 color: rgb(140, 140, 140);
+                margin: 0;
             }
 
             .footer-top {
@@ -157,6 +154,16 @@ export default () => (
 
             .social a .fa-linkedin:after {
                 background: #1884BB;
+            }
+
+            @media only screen and (min-width: 600px) {
+                .md-grid {
+                    padding: 0.5rem 10rem;
+                }
+
+                .footer-top {
+                    padding-top: 30px;
+                }
             }
 
             `}</style>

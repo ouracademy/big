@@ -34,7 +34,13 @@ const Page = ({ title, children }) => (
                 flex-flow: row wrap;
                 align-items:center;
                 justify-content: space-around;
-                padding: 4rem;
+                padding: 2rem;
+            }
+
+            @media only screen and (min-width: 600px) { 
+                section {
+                    padding: 4rem;
+                }
             }
         `}</style>
     </div>

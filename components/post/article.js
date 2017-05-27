@@ -28,7 +28,13 @@ export default ({ post }) => (
             }
 
             .aligner-item {
-               max-width: 52%;
+               max-width: 75%;
+            }
+
+            @media only screen and (min-width: 768px) {
+                .aligner-item {
+                   max-width: 52%;
+                }
             }
 
             article {
@@ -37,10 +43,6 @@ export default ({ post }) => (
 
             .content {
                 padding-bottom: 1rem;
-            }
-
-            footer {
-                height: 4rem;
             }
         `}</style>
         <style global jsx>{`
@@ -54,6 +56,7 @@ export default ({ post }) => (
 
             .tag {
                 margin-right: 0.5rem;
+                margin-bottom: 0.5rem;
             }
 
             .md-chip {

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Meta from './meta'
 
 export default ({ post }) => (
-    <Card style={{ width: 500 }} className="md-block-centered">
+    <Card style={{ width: 500, marginBottom: "2rem" }} className="md-block-centered">
         <Media>
             <Link as={`/post/${post.slug}`} href={`/post?slug=${post.slug}`}>
                 <a>

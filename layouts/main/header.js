@@ -14,7 +14,7 @@ export default ({ alternate }) => {
             <style jsx>{`
                 div :global(.logo) {
                     height: 70%;
-                    margin-top: 1%
+                    margin-top: 7px;
                 }
             `}</style>
             <Toolbar fixed themed={style.themed}
