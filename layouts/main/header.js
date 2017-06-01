@@ -13,7 +13,7 @@ export default ({ alternate }) => {
         <div>
             <style jsx>{`
                 div :global(.logo) {
-                    height: 70%;
+                    height: 3.2rem;
                     margin-top: 7px;
                 }
             `}</style>

@@ -21,8 +21,12 @@ const Page = ({ title, children }) => (
         </main>
         <Footer />
         <style jsx global>{`
-            html, .md-toolbar--themed {
+            html {
                 background-color: white;
+            }
+
+            .md-toolbar--themed {
+                background-color: rgba(255, 255, 255, 0.95);
             }
 
             body { 

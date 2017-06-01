@@ -20,6 +20,13 @@ export default ({ post }) => (
             </Link>
         </Media>
         <Meta author={post.author} publishedAt={post.publishedAt} />
+        <style jsx global>{`
+            .md-card-title--title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        `}</style>
     </Card>
 )
 

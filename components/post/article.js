@@ -82,7 +82,7 @@ export default ({ post }) => (
                 font-weight: 500;
             }
 
-            p, blockquote {
+            p, blockquote, ol, ul {
                 font-size: 1.30rem;
                 line-height: 1.58;
                 margin-top: 2rem;
