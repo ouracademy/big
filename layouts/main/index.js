@@ -5,10 +5,9 @@ import Footer from './footer'
 
 const containerId = 'GTM-M9WLP5B'
 
-const Page = ({ title, children }) => (
+const Page = ({ children }) => (
     <div>
         <Head>
-            <title>{title} | BIG</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/static/favicon.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon" />
 

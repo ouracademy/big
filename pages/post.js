@@ -3,20 +3,14 @@ import { gql, graphql } from 'react-apollo'
 
 import Page from '../layouts/main'
 import PostArticle from '../components/post/article'
+import Head from '../components/head'
 
-const Post = ({ data }) => {
-  const page = data.loading ? {
-    title: 'Cargando Post',
-    content: <div>Loading</div>
-  } : {
-      title: data.Post.title,
-      content: <PostArticle post={data.Post} />
-    }
-
+const Post = ({ data: { loading, Post }, serverState }) => {
   return (
-    <Page title={page.title}>
+    <Page>
+      {(serverState && !loading) && <Head title={Post.title} />}
       <Page.Header />
-      {page.content}
+      {!loading && <PostArticle post={Post} />}
       <style jsx global>{`
         body {
           padding-top: 64px;
@@ -50,6 +44,6 @@ const PostPage = graphql(postQuery, {
   props: ({ data }) => ({ data })
 })(Post)
 
-export default withData(({ url }) => (
-  <PostPage slug={url.query.slug} />
+export default withData(({ serverState, url }) => (
+  <PostPage serverState={serverState} slug={url.query.slug} />
 ))

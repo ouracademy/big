@@ -5,6 +5,8 @@ import withData from '../lib/withData'
 import 'rxjs'
 import { Observable } from 'rxjs/Observable';
 
+import Head from '../components/head'
+
 const isScrollInSlider = (element) => element.scrollTop <= 400
 
 class HomePage extends React.Component {
@@ -29,9 +31,9 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <Page title="Aprende y crea tu futuro">
+      <Page>
         {
-          this.state.isServer ? <div>Loading</div> : <Page.Header alternate={this.state.alternate} />
+          !this.state.isServer && <Page.Header alternate={this.state.alternate} />
         }
         <Slider />
         <PostList />
@@ -40,4 +42,9 @@ class HomePage extends React.Component {
   }
 }
 
-export default withData(HomePage)
+export default withData(({ serverState }) => (
+  <div>
+    {serverState && <Head />}
+    <HomePage />
+  </div>
+))
