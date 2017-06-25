@@ -8,7 +8,13 @@ import Head from '../components/head'
 const Post = ({ data: { loading, Post }, serverState }) => {
   return (
     <Page>
-      {(serverState && !loading) && <Head title={Post.title} />}
+      {
+        (serverState && !loading) &&
+        <Head
+          title={Post.title}
+          meta={{ description: Post.summary, og: { type: 'article', image: Post.imageURL } }}
+        />
+      }
       <Page.Header />
       {!loading && <PostArticle post={Post} />}
       <style jsx global>{`
@@ -25,6 +31,8 @@ const postQuery = gql`
         Post(slug: $slug) {
             slug
             title
+            summary
+            imageURL
             content
             author {
               name
